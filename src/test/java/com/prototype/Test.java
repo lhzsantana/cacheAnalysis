@@ -41,7 +41,7 @@ public class Test {
 
         for(int i=0;i<3;i++){
             System.gc();
-            System.out.println("For "+seed+" calls the total Elaticache time is " + setGetN(seed,elasticache));
+            System.out.println("For "+seed+" calls the total EhCache time is " + setGetN(seed,ehCache));
 
             seed=seed*10;
         }
@@ -66,11 +66,11 @@ public class Test {
 
     private long calculateGetSet(String key, String value, ICache cache){
 
-        cache.set(key, value);
-
         long redisBegin = System.currentTimeMillis();
 
-        assertEquals(value, cache.get(key));
+        cache.set(key, value);
+
+        cache.get(key);
 
         return System.currentTimeMillis() - redisBegin;
     }
