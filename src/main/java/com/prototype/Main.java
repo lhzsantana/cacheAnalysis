@@ -1,6 +1,5 @@
 package com.prototype;
 
-import com.prototype.ehcache.EhCache;
 import com.prototype.redis.Redis;
 
 import java.math.BigInteger;
