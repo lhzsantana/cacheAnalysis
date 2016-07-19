@@ -19,6 +19,9 @@ public class Redis implements ICache {
         if(jedis==null){
             jedis = new Jedis(this.host, this.port);
         }
+
+        //jedis.auth("teste");
+
         return jedis;
     }
 
